@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DentonBot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+          rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/">
+            DentonBot - A Twitch Chat Bot For Smite Streamers
+            </a>
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                    {{#if user}}
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img style="max-width:30px" src="{{user._json.logo}}"> {{user.username}} <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
+                        </li>
+                    {{else}}
+                        <a href="/auth/twitch"><img src="/img/twitchConnect2.png"></a>
+                    {{/if}}
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /navbar-inner -->
+</div>
+<!-- /navbar -->
+<div class="subnavbar">
+    <div class="subnavbar-inner">
+        <div class="container">
+            <ul class="mainnav">
+                <li class="active"><a href="/"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+                <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-list-alt"></i><span>Blog</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Coming Soon!</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-facetime-video"></i><span>Streamers</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Coming Soon!</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-bar-chart"></i><span>Stats</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Coming Soon!</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-envelope"></i><span>Support</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="mailto:messyfresh@gmail.com?Subject=DentonBot%20Support">Email</a></li>
+                        <li><a href="http://twitter.com/dentonbot">Twitter</a></li>
+                    </ul>
+                </li>
+                <li><!--Divider Line--></li>
+            </ul>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /subnavbar-inner -->
+</div>
+<!-- /subnavbar -->
+{{{body}}}
+    </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/excanvas.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    {{#if user}}
+        <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+    {{/if}}
+    <script src="/js/twitterfetch.js"></script>
+    <script src="/js/base.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

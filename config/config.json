@@ -1,0 +1,19 @@
+{
+  "port": 8080,
+  "mongo":{
+    "url": "INSERT MONGO URL HERE"
+  },
+  "twitch":{
+    "clientId": "TWITCH CLIENT ID",
+    "clientSecret": "TWITCH CLIENT SECRET",
+    "callbackURL" : "TWITCH APP CALLBACK URL",
+    "scopes": "user_read,chat_login"
+  },
+  "dentonBot":{
+    "userName": "TWITCH BOT USERNAME",
+    "oauth": "TWITCH BOT OAUTH"
+  },
+  "security":{
+    "sessionSecret": "MAKE UP A SECRET STRING OF NUMBERS/LETTERS"
+  }
+}

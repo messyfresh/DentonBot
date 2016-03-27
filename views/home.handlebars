@@ -1,0 +1,169 @@
+<div class="main">
+    <div class="main-inner">
+        <div class="container">
+            <div class="row">
+                <div class="span6">
+                    <div class="widget widget-nopad">
+                        <!-- DentonBot Control Widget -->
+                        <div class="widget-header"> <i class="icon-play"></i>
+                            <h3> DentonBot Control</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="widget big-stats-container">
+                                <div class="widget-content">
+                                    <h6 class="bigstats">Start and Stop DentonBot </h6>
+                                    <div id="big_stats" class="cf">
+                                        {{#if user}}
+                                            <div class="stat">
+                                                <div><span class="value"><button class="btn btn-large btn-success" id="startDenton">Start</button></span></div>
+                                                <div><span class="value"><button class="btn btn-large btn-danger" id="stopDenton">Stop</button></span></div>
+                                            </div>
+
+                                            <div class="stat">
+                                                <span class="value">Status:</span>
+                                                <span class="value" id="dentonStatus">Not Connected</span>
+                                            </div>
+                                        {{else}}
+                                            <div class="stat">
+                                                <h3>Click below to get started using DentonBot!</h3>
+                                                <div><span class="value"><a href="/auth/twitch"><img src="/img/twitchConnect2.png"></a></span></div>
+                                            </div>
+                                        {{/if}}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End DentonBot Control -->
+                    </div>
+                    <!-- DentonBot Commands -->
+                    <div class="widget">
+                        <div class="widget-header">
+                            <i class="icon-list-alt"></i>
+                            <h3>DentonBot Commands</h3>
+                        </div>
+                        <div class="widget-content">
+                            <ul>
+                                <li><p><b>!div</b> - Displays a player's Conquest League Division, and Win Rate</p></li>
+                                <li><p><b>!duel</b> - Displays a player's Joust (1v1) League Division, and Win Rate</p></li>
+                                <li><p><b>!jdiv</b> - Displays a player's Joust (3v3) League Division, and Win Rate (Currently not working)</p></li>
+                                <li><p><b>!masteries</b> - Displays a player's Gods at Rank 1 or higher</p></li>
+                                <li><p><b>!diamonds</b> - Displays a player's Gods at Rank 10</p></li>
+                                <li><p><b>!conquest</b> - Displays a player's Casual Conquest Total Games and Win Rate</p></li>
+                                <li><p><b>!arena</b> - Displays a player's Arena Total Games and Win Rate</p></li>
+                                <li><p><b>!siege</b> - Displays a player's Siege Total Games and Win Rate</p></li>
+                                <li><p><b>!assault</b> - Displays a player's Assault Total Games and Win Rate</p></li>
+                                <li><p><b>!joust</b> - Displays a player's Joust Total Games and Win Rate</p></li>
+                                <li><p><b>!clash</b> - Displays a player's Clash Total Games and Win Rate</p></li>
+                                <li><p><b>!dentonbot</b> - Displays a list of commands that DentonBot knows.</p></li>
+                                <p>**All commands require a Smite In-Game name after the command (Except !dentonbot)**</p>
+                                <p>Example: !arena havok</p>
+                                <p>I have done my best to retain all old command's functionality.</p>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End DentonBot Commands -->
+                    <!-- Donate -->
+                    <div class="widget">
+                        <div class="widget-header">
+                            <i class="icon-dollar"></i>
+                            <h3>Donate to DentonBot</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div id="donateButton">
+                                <form class="donateButton" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                    <input type="hidden" name="cmd" value="_s-xclick">
+                                    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+                                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                </form>
+                                <p>
+                                    If you happen to try this bot out and enjoy it, feel free to donate to it. I put a lot of time and effort
+                                    into making this bot, any donations will go to the cost of the servers. Overall the bot costs ~$30 a
+                                    month to run using <a href="http://digitalocean.com">digitalocean.com</a> (AWESOME!!! btw) as the SSD
+                                    Cloud Hosting provider. If you're a nerd like me and would like to know how this bot works, let me know on
+                                    twitter <a href="http://twitter.com/messyfresh">@Messyfresh</a> and I'll bore you will all the juicy details
+                                    of what makes DentonBot tick.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <!-- Ad -->
+                    <div class="widget">
+                        <div class="widget-header">
+                            <i class="icon-dollar"></i>
+                            <h3>Ad</h3>
+                        </div>
+                        <div class="widget-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <!-- DentonBot -->
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-6773420952211161"
+                                 data-ad-slot="4606060137"
+                                 data-ad-format="auto"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                    </div>
+                    <!-- End Ad -->
+                    <!-- Chat -->
+                    <div class="widget widget-nopad widget-table">
+                        <div class="widget-header">
+                            <i class="icon-comment"></i>
+                            <h3>Chat</h3>
+                        </div>
+                        <div class="widget-content">
+                            {{#if user}}
+                                <iframe class="twitchChat" src="http://www.twitch.tv/{{user.username}}/chat?popout=" frameborder="0" scrolling="yes"></iframe>
+                            {{else}}
+                                <iframe class="twitchChat" src="http://www.twitch.tv/dentonbot/chat?popout=" frameborder="0" scrolling="yes"></iframe>
+                            {{/if}}
+
+                        </div>
+                    </div>
+                    <!-- End Chat -->
+                    <!-- Twitter Feed -->
+                    <div class="widget">
+                        <div class="widget-header">
+                            <i class="icon-twitter"></i><h3>DentonBot Twitter</h3>
+                        </div>
+                        <div class="widget-content">
+                            <a class="twitter-timeline" href="https://twitter.com/DentonBot" data-widget-id="640675267531423744">Tweets by @DentonBot</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?
+                                    'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+
+                                    "://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,
+                                    "script","twitter-wjs");
+                            </script>
+                        </div>
+                    </div>
+                    <!-- End Twitter Feed -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<div class="footer">
+    <div class="footer-inner">
+        <div class="container">
+            <div class="row">
+                <div class="span12"> &copy; 2015 DentonBot.tv </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Footer -->
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-51537811-4', 'auto');
+    ga('send', 'pageview');
+</script>
