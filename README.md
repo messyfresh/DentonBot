@@ -1,2 +1,2 @@
 # DentonBot
-Requires DentonAPI to be running
+Requires [DentonAPI](https://github.com/messyfresh/DentonAPI) to be running
